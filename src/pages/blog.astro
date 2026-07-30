@@ -1,0 +1,36 @@
+---
+const articles = [
+  {
+    title: 'Como proteger o mobiliário de jardim durante o inverno?',
+    description: 'Guia para escolher uma capa exterior impermeável e prolongar a vida do mobiliário.'
+  },
+  {
+    title: 'Qual o melhor tecido para uma capa exterior?',
+    description: 'Comparação entre Oxford 420D, Oxford 600D e materiais impermeáveis.'
+  },
+  {
+    title: 'Como medir uma capa personalizada?',
+    description: 'Aprenda a tirar medidas corretas antes de pedir uma capa à medida.'
+  }
+];
+---
+<html lang="pt-PT">
+  <head>
+    <title>Guias sobre Capas Exteriores Personalizadas</title>
+    <meta name="description" content="Conselhos sobre proteção de mobiliário exterior, materiais impermeáveis e capas feitas à medida." />
+  </head>
+  <body>
+    <main>
+      <h1>Guias e conselhos sobre capas exteriores</h1>
+      <p>Informação prática para escolher, medir e cuidar das suas capas personalizadas.</p>
+      <ul>
+        {articles.map((article) => (
+          <li>
+            <h2>{article.title}</h2>
+            <p>{article.description}</p>
+          </li>
+        ))}
+      </ul>
+    </main>
+  </body>
+</html>
