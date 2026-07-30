@@ -1,0 +1,22 @@
+---
+const message = 'Olá, gostaria de pedir um orçamento para uma capa personalizada.';
+const phone = '';
+const url = phone
+  ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+  : '#orcamento';
+---
+
+<a class="whatsapp-button" href={url} aria-label="Pedir orçamento pelo WhatsApp">
+  Pedir orçamento pelo WhatsApp
+</a>
+
+<style>
+  .whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>
