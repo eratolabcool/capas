@@ -1,0 +1,42 @@
+---
+interface Props {
+  type?: 'service' | 'faq'
+}
+
+const { type = 'service' } = Astro.props;
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Capas personalizadas para exterior',
+  description: 'Produção de capas à medida para mobiliário, equipamentos exteriores, hotéis e restaurantes.',
+  areaServed: 'Portugal',
+  serviceType: 'Capas de proteção personalizadas'
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Fazem capas personalizadas por medida?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sim. Produzimos capas de acordo com as dimensões e necessidades do cliente.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Que materiais utilizam?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Disponibilizamos opções como Oxford 420D, Oxford 600D e materiais impermeáveis para exterior.'
+      }
+    }
+  ]
+};
+
+const schema = type === 'faq' ? faqSchema : serviceSchema;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
