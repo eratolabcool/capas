@@ -1,26 +1,60 @@
 ---
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import ProductImage from '../components/ProductImage.astro';
+import ProductSchema from '../components/ProductSchema.astro';
+
 const title = 'Capas para hotéis e restaurantes | Soluções profissionais';
 ---
 <html lang="pt-PT">
   <head>
-    <title>{title}</title>
-    <meta name="description" content="Capas personalizadas para hotéis, restaurantes, cafés e esplanadas. Proteção profissional para mobiliário exterior." />
+    <title>{title} | CapasPro</title>
+    <meta name="description" content="Capas personalizadas para hotéis, restaurantes, cafés e esplanadas em Portugal. Proteção profissional para mobiliário exterior." />
   </head>
   <body>
+    <ProductSchema
+      name="Capas profissionais para hotéis e restaurantes"
+      description="Soluções personalizadas para proteger mobiliário exterior comercial contra chuva, sol e humidade."
+    />
+
     <main>
-      <h1>Capas personalizadas para hotéis e restaurantes</h1>
-      <p>
-        Soluções profissionais para espaços exteriores que precisam de proteção
-        durante todo o ano.
-      </p>
-      <h2>Projetos comerciais</h2>
-      <ul>
-        <li>Esplanadas de restaurantes</li>
-        <li>Terraços de hotéis</li>
-        <li>Cafés e espaços turísticos</li>
-        <li>Grandes quantidades sob consulta</li>
-      </ul>
-      <a href="/pedir-orcamento">Pedir orçamento</a>
+      <header>
+        <ProductImage
+          src="/images/projects/hotel-pool.jpg"
+          alt="Proteção de mobiliário exterior para hotel em Portugal"
+        />
+        <h1>Capas personalizadas para hotéis e restaurantes</h1>
+        <p>
+          Soluções profissionais para esplanadas, terraços e espaços turísticos
+          que precisam de proteção durante todo o ano.
+        </p>
+        <a href="/pedir-orcamento">Receber orçamento empresarial</a>
+        <WhatsAppButton />
+      </header>
+
+      <section>
+        <h2>Soluções comerciais</h2>
+        <ul>
+          <li>Esplanadas de restaurantes</li>
+          <li>Terraços de hotéis</li>
+          <li>Cafés e espaços turísticos</li>
+          <li>Projetos com grandes quantidades</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Porque escolher capas profissionais</h2>
+        <ul>
+          <li>Produção à medida para cada espaço</li>
+          <li>Proteção contra chuva e exposição solar</li>
+          <li>Soluções adaptadas a uso intensivo</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Pedir proposta para o seu projeto</h2>
+        <p>Envie fotografias, medidas e quantidade necessária para receber uma proposta personalizada.</p>
+        <a href="/pedir-orcamento">Pedir orçamento</a>
+      </section>
     </main>
   </body>
 </html>
