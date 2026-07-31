@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+  <rect width="800" height="220" fill="white"/>
+  <g transform="translate(30,35)">
+    <path d="M70 0 L140 45 V120 Q70 180 0 120 V45 Z" fill="none" stroke="#17324d" stroke-width="12"/>
+    <path d="M30 70 Q70 40 110 70 V115 H30Z" fill="#0b5b43"/>
+    <path d="M70 125 L70 150" stroke="#17324d" stroke-width="8"/>
+  </g>
+  <text x="210" y="110" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#0b5b43">Capas</text>
+  <text x="440" y="110" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#17324d">Pro</text>
+  <text x="215" y="160" font-family="Arial, sans-serif" font-size="24" letter-spacing="8" fill="#17324d">CAPAS À MEDIDA</text>
+</svg>
