@@ -1,6 +1,7 @@
 ---
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import ProductImage from '../components/ProductImage.astro';
+import LocalBusinessJsonLd from '../components/LocalBusinessJsonLd.astro';
 
 const title = 'Capas à Medida para Mobiliário Exterior';
 ---
@@ -8,6 +9,7 @@ const title = 'Capas à Medida para Mobiliário Exterior';
   <head>
     <title>{title} | Proteção Personalizada</title>
     <meta name="description" content="Capas exteriores personalizadas para mobiliário de jardim, sofás, restaurantes, hotéis e equipamentos. Envie medidas e receba um orçamento gratuito." />
+    <LocalBusinessJsonLd />
   </head>
   <body>
     <header>
@@ -22,7 +24,6 @@ const title = 'Capas à Medida para Mobiliário Exterior';
         <WhatsAppButton />
       </div>
     </header>
-
     <main>
       <section>
         <h2>Soluções mais procuradas</h2>
@@ -32,7 +33,6 @@ const title = 'Capas à Medida para Mobiliário Exterior';
           <a href="/capa-cobertura-equipamento-industrial">Capas industriais</a>
         </div>
       </section>
-
       <section>
         <h2>Como funciona</h2>
         <ol>
@@ -42,13 +42,11 @@ const title = 'Capas à Medida para Mobiliário Exterior';
           <li>A capa é produzida conforme as especificações.</li>
         </ol>
       </section>
-
       <section>
         <h2>Proteção para casas e empresas</h2>
         <p>Desde pequenos terraços privados até hotéis, restaurantes e equipamentos exteriores, criamos soluções de proteção adaptadas ao seu espaço.</p>
         <a href="/projetos">Conhecer projetos</a>
       </section>
-
       <section>
         <h2>Pedir orçamento personalizado</h2>
         <p>Envie medidas e fotografias para receber uma proposta adequada ao seu caso.</p>
