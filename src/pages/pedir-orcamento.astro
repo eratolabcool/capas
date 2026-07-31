@@ -2,17 +2,74 @@
 const title = 'Pedir Orçamento de Capa Personalizada';
 ---
 <html lang="pt-PT">
-<head><title>{title}</title><meta name="description" content="Envie medidas e fotografias para receber uma proposta personalizada." /></head>
+<head>
+  <title>{title}</title>
+  <meta name="description" content="Envie medidas, fotografias e detalhes para receber uma proposta personalizada de capa exterior." />
+</head>
 <body>
-<header><h1>{title}</h1><p>Receba uma proposta para a sua capa feita à medida.</p></header>
+<header>
+  <h1>{title}</h1>
+  <p>Receba uma proposta personalizada para a sua capa exterior.</p>
+</header>
+
 <main>
-<form>
-<label>Tipo de produto</label><input name="produto" />
-<label>Dimensões</label><input name="medidas" />
-<label>Email</label><input type="email" name="email" />
-<label>Mensagem</label><textarea name="mensagem"></textarea>
-<button>Enviar pedido</button>
+<form id="quote-form">
+  <label>Tipo de produto</label>
+  <select name="product" required>
+    <option value="Sofá exterior">Sofá exterior</option>
+    <option value="Mesa de jardim">Mesa de jardim</option>
+    <option value="Churrasqueira">Churrasqueira</option>
+    <option value="Piscina">Piscina</option>
+    <option value="Jacuzzi">Jacuzzi</option>
+    <option value="Equipamento">Equipamento exterior</option>
+  </select>
+
+  <label>Comprimento (cm)</label>
+  <input name="length" />
+  <label>Largura (cm)</label>
+  <input name="width" />
+  <label>Altura (cm)</label>
+  <input name="height" />
+
+  <label>Material</label>
+  <select name="material">
+    <option>Oxford 420D</option>
+    <option>Oxford 600D</option>
+    <option>PVC impermeável</option>
+  </select>
+
+  <label>Nome</label>
+  <input name="name" required />
+
+  <label>Email</label>
+  <input type="email" name="email" required />
+
+  <label>WhatsApp</label>
+  <input name="whatsapp" />
+
+  <label>Mensagem</label>
+  <textarea name="message"></textarea>
+
+  <button type="submit">Enviar pedido</button>
 </form>
+
+<p id="status"></p>
 </main>
+
+<script>
+const form = document.querySelector('#quote-form');
+const status = document.querySelector('#status');
+form?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const data = Object.fromEntries(new FormData(form));
+  const response = await fetch('/api/quote', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  });
+  const result = await response.json();
+  status.textContent = result.message || 'Pedido enviado.';
+});
+</script>
 </body>
 </html>
