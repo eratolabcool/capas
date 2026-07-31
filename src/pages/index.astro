@@ -1,4 +1,7 @@
 ---
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import ProductImage from '../components/ProductImage.astro';
+
 const title = 'Capas à Medida para Mobiliário Exterior';
 ---
 <html lang="pt-PT">
@@ -8,12 +11,17 @@ const title = 'Capas à Medida para Mobiliário Exterior';
   </head>
   <body>
     <header>
+      <ProductImage
+        src="/images/projects/residential-outdoor.jpg"
+        alt="Capas personalizadas para mobiliário exterior numa casa moderna"
+      />
       <h1>Capas à medida para proteger o seu espaço exterior</h1>
       <p>
         Soluções personalizadas contra chuva, sol, humidade e vento para casas,
         hotéis, restaurantes e empresas.
       </p>
       <a href="/pedir-orcamento">Receber orçamento gratuito</a>
+      <WhatsAppButton />
     </header>
 
     <main>
@@ -40,27 +48,18 @@ const title = 'Capas à Medida para Mobiliário Exterior';
 
       <section>
         <h2>Porquê escolher capas personalizadas?</h2>
-        <p>
-          Cada espaço exterior tem dimensões diferentes. Uma capa feita à medida
-          oferece melhor proteção, acabamento e durabilidade.
-        </p>
+        <p>Cada espaço exterior tem dimensões diferentes. Uma capa feita à medida oferece melhor proteção, acabamento e durabilidade.</p>
       </section>
 
       <section>
         <h2>Materiais preparados para exterior</h2>
-        <p>
-          Trabalhamos com materiais adequados para utilização exterior, incluindo
-          opções impermeáveis e resistentes aos raios UV.
-        </p>
+        <p>Trabalhamos com materiais adequados para utilização exterior, incluindo opções impermeáveis e resistentes aos raios UV.</p>
         <a href="/materiais">Conhecer materiais</a>
       </section>
 
       <section>
         <h2>Projetos residenciais e profissionais</h2>
-        <p>
-          Criamos soluções para terraços, jardins, esplanadas, hotéis e espaços
-          comerciais.
-        </p>
+        <p>Criamos soluções para terraços, jardins, esplanadas, hotéis e espaços comerciais.</p>
         <a href="/projetos">Ver projetos</a>
       </section>
 
