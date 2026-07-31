@@ -1,3 +1,5 @@
+import { sendQuoteEmail } from '../../lib/email';
+
 export const prerender = false;
 
 type QuoteRequest = {
@@ -25,31 +27,19 @@ export async function POST({ request }: { request: Request }) {
   const missing = required.filter((field) => !data[field as keyof QuoteRequest]);
 
   if (missing.length) {
-    return new Response(
-      JSON.stringify({
-        success: false,
-        error: `Campos obrigatórios: ${missing.join(', ')}`,
-      }),
-      {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      }
-    );
+    return new Response(JSON.stringify({ success: false, error: `Campos obrigatórios: ${missing.join(', ')}` }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
-  // Production integration point:
-  // Connect RESEND_API_KEY to send the Portuguese quotation email.
-  // Store CRM/webhook data here after validation.
-  console.log('Novo pedido CapasPro:', JSON.stringify(data));
+  await sendQuoteEmail(data as Required<Pick<QuoteRequest, 'name' | 'email' | 'product'>> & QuoteRequest);
 
-  return new Response(
-    JSON.stringify({
-      success: true,
-      message: 'Pedido recebido. Entraremos em contacto brevemente.',
-    }),
-    {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    }
-  );
+  return new Response(JSON.stringify({
+    success: true,
+    message: 'Pedido recebido. Entraremos em contacto brevemente.',
+  }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  });
 }
