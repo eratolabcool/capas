@@ -1,12 +1,25 @@
 ---
-const message = 'Olá, gostaria de pedir um orçamento para uma capa personalizada.';
-const phone = '';
+interface Props {
+  message?: string;
+}
+
+const {
+  message = 'Olá, gostaria de pedir um orçamento para uma capa personalizada.'
+} = Astro.props;
+
+const phone = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '';
 const url = phone
   ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
   : '#orcamento';
 ---
 
-<a class="whatsapp-button" href={url} aria-label="Pedir orçamento pelo WhatsApp">
+<a
+  class="whatsapp-button"
+  href={url}
+  target={phone ? '_blank' : undefined}
+  rel={phone ? 'noopener noreferrer' : undefined}
+  aria-label="Pedir orçamento pelo WhatsApp"
+>
   Pedir orçamento pelo WhatsApp
 </a>
 
@@ -14,9 +27,12 @@ const url = phone
   .whatsapp-button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     padding: 12px 20px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
+    background: #25d366;
+    color: #fff;
   }
 </style>
